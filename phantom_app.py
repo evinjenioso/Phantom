@@ -23,3 +23,4 @@ def scrim_sort():
               for i in split_me_open]     
     return(str(teams))
     #return(str(players))
+
