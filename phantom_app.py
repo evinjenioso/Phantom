@@ -29,9 +29,5 @@ def scrim_sort():
     teams = [list(islice(squad, i))
               for i in split_me_open]
     return(str(teams))
-<<<<<<< HEAD
     #return(str(players))
 
-=======
-######################################################
->>>>>>> b6835dc3e2581994c99145eb1e9abdc7dcc83fe6
