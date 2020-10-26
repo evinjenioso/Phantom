@@ -1,151 +1,97 @@
 <!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-  .fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 60px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-}
 
-.fa:hover {
-    opacity: 0.7;
-}
-
-.fa-youtube {
-  background: #bb0000;
-  color: white;
-}
-
-.fa-reddit {
-  background: #ff5700;
-  color: white;
-}
-.fa-crosshairs {
-  background: #000000;
-  color: rgb(223, 0, 0);
-}
-.fa-bullseye {
-  background: #000000;
-  color: white;
-}
-.fa-rocket {
-  background: #bb0000;
-  color: white;
-}
-.fa-bank {
-  background: #bb0000;
-  color: white;
-}
-body {
-  background-image: url("/static/moonsquad.jpg");
-  background-size: auto;
-}
-strong {
-  color: white;
-  font-weight: 10;
-}
-button {
-  color: white;
-}
-
-</style>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">Phantom</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/home/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/squads/">Sort</a>
-        </li>
-        <!-- 
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li> 
-        -->
-      </ul>
-    </div>
-</nav>
 <html>
   <head>
       <!-- Required meta tags -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
-      <title>{% block title %}{% endblock %}</title>
-      <title>Scrim Teams</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/styles.css" media="screen"/>
   </head>
 
-  <body>
-    <!--- <style>
-      body {
-        background-image: url("/static/moonsquad.jpg");
-      }
-    </style> --->
+  <video autoplay muted loop id="live-europa">
+    <source src="/static/live-europa.mp4" type="video/mp4">
+  </video>
+  <div class="content">
+    <!-- navbar start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <a class="navbar-brand" href="/">Phantom</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/squads/">Sort</a>
+          </li>
+          <!-- 
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li> 
+          -->
+        </ul>
+      </div>
+    </nav>
+    <!-- navbar end -->
     <div class="d-flex align-items-start flex-column" style="height: 200px;">
-<!------ Google Search ---------->
+      <!------ Google Search start ---------->
       <div class="container">
-    	    <div class="row">
-    	    	<div class="col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-    	    	<div class="row google-logo text-center">
-    	    	  <!--<img src="/static/fotl_banner.jpg" alt="logo">-->
-    	    	</div>
-    	    	<div class="row google-form text-center">
-    	    		<form action="https://google.com/search" method="get">
-    	    			<div class="form-group"></div>
-              
-              <input type="text" class="form-control google-search" name="q">
-              <div class="btn-group"></div>
-            </div>
+    	  <div class="row">
+    	  	<div class="col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+    	  	<div class="row google-logo text-center">
+    	  	  <!--<img src="/static/fotl_banner.jpg" alt="logo">-->
+    	  	</div>
+    	  	<div class="row google-form text-center">
+    	  		<form action="https://google.com/search" method="get">
+    	  			<div class="form-group"></div>
+            <input type="text" class="form-control google-search" name="q">
+            <div class="btn-group"></div>
             <button type="submit" style="font-size: large; font-weight: 800; color: white;" class="btn btn-default">Google Search</button>
-            <a type="button" href="https://www.reddit.com/r/riskyclickoftheday/" style="font-size: large; font-weight: 800; color: white;" class="btn btn-default">I'm Feeling Lucky!</a>
           </div>
+          
+          <!--<a type="button" href="https://www.reddit.com/r/riskyclickoftheday/" style="font-size: large; font-weight: 800; color: white;" class="btn btn-default">I'm Feeling Lucky!</a> -->
+        </div>
       </div>
     </div>
-<!------^^ Google Search ^^---------->
-  <div>
-    <div>
-      <a href="https://www.reddit.com/r/DestinyTheGame/" class="fa fa-reddit"></a>
-      <strong>/r/DestinyTheGame</strong>
-    </div> 
-    
-    <div>
-      <a href="https://app.destinyitemmanager.com/" class="fa fa-bank"></a>
-      <strong>Destiny Item manager</strong>
-    </div>
+    <!------^^ Google Search end ^^---------->
+    <div class="icons">
+      <div>
+        <a href="https://www.reddit.com/r/DestinyTheGame/" class="fa fa-reddit"></a>
+        <strong>/r/DestinyTheGame</strong>
+        <a href="https://bungie.net/" class='fa'>
+          <img class="bungie-logo" src="/static/bungie_logo_with_shield.svg" alt="Bungie.net">
+        </a>
+      </div> 
 
-    <div>  
-      <a href="https://beta.d2gunsmith.com/" class="fa fa-crosshairs"></a>
-      <strong>Gunsmith</strong>
-    </div>
+      <div>
+        <a href="https://app.destinyitemmanager.com/" class="fa">
+          <img class="logo release" src="/static/fa-dim.svg" alt="DIM" aria-label="dim">
+        </a>
+        <strong>Destiny Item Manager</strong>
+        <a href="https://beta.d2gunsmith.com/" class="fa fa-crosshairs"></a>
+        <strong>Gunsmith</strong>
+      </div>
 
-    <div>  
-      <a href="https://docs.google.com/spreadsheets/u/1/d/1_6zsM7kzvg0aUT8YtM_-Wg_5K1gKDOlrwfVzutEjq-s/htmlview" class="fa fa-bullseye"></a>
-      <strong>Massive Weapons Breakdown</strong>
-    </div>
+      <div>
+        <a href="https://www.twitch.tv/evinjenioso" class="fa fa-twitch"></a>
+        <strong>Twitch</strong>
+      </div>
+      <div>
+        <a href="https://github.com/evinjenioso/phantom" class="fa fa-github-square"></a>
+        <strong>Github</strong>
+      </div>
 
-    <div>
-      <a href="https://bungie.net/" class="fa fa-rocket"></a>
-      <strong>Bungie</strong>
-    </div>
-
-    <div>
-      <a href="https://www.youtube.com/" class="fa fa-youtube"></a>
-      <strong>Youtube</strong>
+      <!--<div>
+        <a href="https://www.youtube.com/" class="fa fa-youtube"></a>
+        <strong>Youtube</strong>
+      </div>-->
     </div>
   </div>
-
-  </body>
 </html>
 
